@@ -1,36 +1,40 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const port = process.env.PORT || 4000;
+
 module.exports = {
     mode: 'development',
-    entry: './src/app.js',
+    entry: './src/index.js',
     output: {
-        filename: 'app.bundle.js',
-        path: path.resolve(__dirname, 'public'),
+        filename: 'bundle.[hash].js'
     },
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: [
-                    { loader: "style-loader" },
-                    { loader: "css-loader" }
-                ]
+                test: /\.(js)$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
             },
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: "babel-loader"
-            }, {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                use: "babel-loader"
+                test: /\.css$/,
+                use: [
+                    { 
+                        loader: "style-loader"
+                    },
+                    { 
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            camelCase: true,
+                            sourceMap: true
+                        }
+                    }
+                ]
             }
         ]
     },
-    resolve: {
-        extensions: ['*', '.js', '.jsx']
-      },
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
@@ -38,5 +42,11 @@ module.exports = {
             template: './src/templates/html/index.html',
             filename: './index.html'
         })
-    ]
+    ],
+    devServer: {
+        host: 'localhost',
+        port: port,
+        historyApiFallback: true,
+        open: true
+    }
 };

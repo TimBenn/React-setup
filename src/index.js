@@ -5,4 +5,4 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(<BrowserRouter>
     <App />
-  </BrowserRouter>, document.getElementById('app'));
+  </BrowserRouter>, document.getElementById('root'));

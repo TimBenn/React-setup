@@ -1,9 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 
-const App = (props) => (
-  <div>
-    
-  </div>
-);
+const App = () => {
+  return (
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/" />
+        </Switch>
+      </div>
+    </Router>
+  )
+};
 
 export default App;
