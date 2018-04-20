@@ -1,13 +1,18 @@
-import React, { Component } from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
+import { Menu } from "semantic-ui-react";
 
-export default class Header extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
-}
+const Header = () => {
+  return (
+    <Menu>
+      <Menu.Item>
+        <Link to="/">Home</Link>
+      </Menu.Item>
+      <Menu.Item>
+        <Link to="/about">About</Link>
+      </Menu.Item>
+    </Menu>
+  );
+};
 
-
+export default Header;

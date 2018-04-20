@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 module.exports = {
     mode: 'development',
@@ -13,6 +13,15 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+                use: {
+                  loader: 'url-loader',
+                  options: {
+                    limit: 100000,
+                  },
+                },
+              },
+              {
                 test: /\.(js)$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
