@@ -1,4 +1,33 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lobster|Roboto:300,400,500,700,900');
+
+a,strong,p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Lobster', cursive;
+}
+
+.layout {
+    background-color: #222629;
+}
+
 h1 {
     font-size: 50px;
     color: #fff;
+}
+
+a {
+    color: #87c232;
+    font-size: 18px;
+}
+
+a:hover {
+    color: #618930;
+}
+
+.light-green {
+    color: #87c232;
 }

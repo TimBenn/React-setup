@@ -4,7 +4,7 @@ import Styles from "./Home.css";
 
 const Home = () => {
   return (
-    <div>
+    <div className={Styles.homeContainer}>
       <div className={Styles.hero}>
         <h1>Home</h1>
       </div>

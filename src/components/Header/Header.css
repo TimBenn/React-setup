@@ -1,4 +1,9 @@
 #main-menu {
     margin-bottom: 0px;
     border: none;
+    background-color: #222629;
+}
+
+#main-menu a {
+    line-height: 70px;
 }
