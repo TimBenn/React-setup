@@ -7,27 +7,14 @@ a,strong,p {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Roboto', sans-serif;
 }
-
-.layout {
-    background-color: #222629;
-}
-
 h1 {
     font-size: 50px;
-    color: #fff;
+    color: #000;
 }
 
 a {
-    color: #87c232;
+    color: #fff;
     font-size: 18px;
-}
-
-a:hover {
-    color: #618930;
-}
-
-.light-green {
-    color: #87c232;
 }

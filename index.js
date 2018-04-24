@@ -2,6 +2,7 @@ require('./config/config');
 const express = require('express');
 const session = require('express-session');
 const app = express();
+var cors = require('cors');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
