@@ -4,10 +4,6 @@ import Styles from "./Home.css";
 
 
 export default class Home extends Component {
-  state = {
-    projects: []
-  }
-
   componentDidMount() {
 
   }

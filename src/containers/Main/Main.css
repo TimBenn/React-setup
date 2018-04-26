@@ -1,6 +1,5 @@
 .main {
-    padding-top: 60px;
-    padding-left: 15px;
+    padding: 60px 15px;
 }
 
 @media screen and (min-width: 600px) {

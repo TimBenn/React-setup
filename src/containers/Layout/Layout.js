@@ -6,7 +6,7 @@ import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
 import IconButton from 'material-ui/IconButton';
 import List from 'material-ui/List';
-import Main from '../../containers/Main';
+import Main from '../../containers/Main/Main';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
