@@ -1,11 +1,12 @@
 import React from "react";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "./Home/Home";
-import Styles from './Main.css'
+import Home from "../Home/Home";
+import About from '../About/About'
+import Styles from './Routes.css'
 
-const Main = () => {
+const Routes = () => {
   return (
-    <div className={Styles.main}>
+    <div className={Styles.routesContainer}>
       <Switch>
         <Route exact path="/" component={Home} />
       </Switch>
@@ -13,4 +14,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Routes;
