@@ -1,15 +1,17 @@
 import Header from '../../components/Header/Header';
-import Routes from '../../containers/Routes/Routes';
-import React from 'react';
+import React, { Component } from 'react';
+import Routes from '../Routes/Routes';
 import Styles from './Layout.css';
 
-const Layout = () => {
-  return (
-    <div>
-      <Header />
-      <Routes />
-    </div>
-  );
+class Layout extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Routes />
+      </div>
+    );
+  }
 }
 
 export default Layout;

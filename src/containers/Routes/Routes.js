@@ -1,17 +1,17 @@
-import Auth from '../../components/Auth/Auth'
-import Dashboard from "../Dashboard/Dashboard";
 import React from "react";
-import Styles from './Routes.css'
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "../Home/Home";
+import About from '../About/About'
+import Styles from './Routes.css'
 
-const Main = () => {
+const Routes = () => {
   return (
-    <div className={Styles.main}>
+    <div className={Styles.routesContainer}>
       <Switch>
-        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/" component={Home} />
       </Switch>
     </div>
   );
 };
 
-export default Main;
+export default Routes;
