@@ -20,9 +20,6 @@ module.exports = {
   },
 
   editInventoryItem(req, res) {
-    if (!req.params.id) {
-      return res.status(400).send("Not in User");
-    }
     Users.findByIdAndUpdate(req.params.id, req.body).exec((err, inventory) => {
       if (err) {
         return res.send(err);
@@ -32,9 +29,6 @@ module.exports = {
   },
 
   deleteInventoryItem(req, res) {
-    if (!req.params.id) {
-      return res.status(400).send("Find inventory To Delete");
-    }
     Users.findByIdAndRemove(req.params.id, req.body).exec((err, inventory) => {
       if (err) {
         return res.send(err);
