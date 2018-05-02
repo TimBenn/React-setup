@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Styles from "./Home.css";
+import Styles from "./Dashboard.css";
 
 
 export default class Home extends Component {
-  componentDidMount() {
-
+  state = {
+    
   }
 
   render() {
     return (
-      <div className={Styles.homeContainer}>
+      <div>
         <div className={Styles.hero}>
           <h1>Home</h1>
         </div>
