@@ -3,7 +3,7 @@ import axios from 'axios';
 import Styles from "./Dashboard.css";
 
 
-export default class Home extends Component {
+export default class Dashboard extends Component {
   state = {
     
   }
@@ -12,7 +12,7 @@ export default class Home extends Component {
     return (
       <div>
         <div className={Styles.hero}>
-          <h1>Home</h1>
+          <h1>Dashboard</h1>
         </div>
       </div>
     )
