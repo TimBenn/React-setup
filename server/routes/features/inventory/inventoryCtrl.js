@@ -1,8 +1,8 @@
-const Users = require("./Inventory");
+const Inventory = require("./Inventory");
 
 module.exports = {
   getInventory(req, res) {
-    Users.find(req.query).exec((err, inventory) => {
+    Inventory.find(req.query).exec((err, inventory) => {
       if (err) {
         return res.status(500).json(err);
       }
@@ -11,7 +11,7 @@ module.exports = {
   },
 
   getOneInventoryItem(req, res) {
-    Users.findById(req.params.id).exec((err, inventory) => {
+    Inventory.findById(req.params.id).exec((err, inventory) => {
       if (err) {
         return res.status(500).json(err);
       }
@@ -19,11 +19,17 @@ module.exports = {
     });
   },
 
+  createInventoryItem(req, res) {
+    new Inventory(req.body).save((err, inventory) => {
+        if (err) {
+            return res.status(500).json(err);
+        }
+        return res.status(200).json(inventory);
+      });
+  },
+
   editInventoryItem(req, res) {
-    if (!req.params.id) {
-      return res.status(400).send("Not in User");
-    }
-    Users.findByIdAndUpdate(req.params.id, req.body).exec((err, inventory) => {
+    Inventory.findByIdAndUpdate(req.params.id, req.body).exec((err, inventory) => {
       if (err) {
         return res.send(err);
       }
@@ -32,10 +38,7 @@ module.exports = {
   },
 
   deleteInventoryItem(req, res) {
-    if (!req.params.id) {
-      return res.status(400).send("Find inventory To Delete");
-    }
-    Users.findByIdAndRemove(req.params.id, req.body).exec((err, inventory) => {
+    Inventory.findByIdAndRemove(req.params.id, req.body).exec((err, inventory) => {
       if (err) {
         return res.send(err);
       }

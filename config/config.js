@@ -8,4 +8,4 @@ CONFIG.mongoURI = 'mongodb://tbennett:Tben0213@ds111430.mlab.com:11430/richmond-
 CONFIG.session = {
     secret: 'whenihavetime',
     name: 'sessionId'
-};
+}
