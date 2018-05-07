@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base dist --hot --inline"
+    "server": "nodemon index.js",
+    "dev": "webpack-dev-server --watch --hot --inline"
   },
   "keywords": [],
   "author": "",
