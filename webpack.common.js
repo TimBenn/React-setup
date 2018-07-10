@@ -1,16 +1,13 @@
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
-const port = process.env.PORT || 3000;
+const path = require("path");
+const webpack = require('webpack');
 
 module.exports = {
-  mode: "development",
   entry: "./src/index.js",
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "bundle.js"
   },
-  devtool: "inline-source-map",
   module: {
     rules: [
       {
@@ -25,7 +22,12 @@ module.exports = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: [{
+          loader: "babel-loader",
+          options: {
+            babelrc: path.join(process.cwd(), './babelrc')
+          }
+        }]
       },
       {
         test: /\.css$/,
@@ -52,20 +54,5 @@ module.exports = {
       template: "./templates/html/index.html",
       filename: "./index.html"
     })
-  ],
-  devServer: {
-    host: "localhost",
-    port: port,
-    historyApiFallback: true,
-    open: true,
-    contentBase: path.join(__dirname, "/dist"),
-    watchContentBase: true,
-    proxy: {
-      "/api": {
-        target: "http://localhost:4000",
-        secure: false,
-        changeOrigin: true
-      }
-    }
-  }
+  ]
 };

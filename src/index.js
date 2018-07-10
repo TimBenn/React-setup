@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Layout from "./containers/Layout/Layout";
+import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import 'normalize.css';
 import './index.css';
 
 ReactDOM.render(
   <BrowserRouter>
-    <Layout />
+    <App />
   </BrowserRouter>,
   document.getElementById("root")
 );
