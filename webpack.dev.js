@@ -16,7 +16,6 @@ module.exports = merge(common, {
     watchContentBase: true,
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     })
